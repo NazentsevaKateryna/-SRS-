@@ -1,11 +1,29 @@
-mermaid
-КопіюватиРедагувати
-flowchart LR
-    A[Admin] -->|Manage Users| UC1((User Management))
-    B[Manager] -->|Create & Assign Task| UC2((Create/Assign Task))
-    B[Manager] -->|Generate Reports| UC3((Reporting))
-    C[User] -->|Update Task Status| UC4((Task Tracking))
-    C[User] -->|View Tasks| UC4
-    C[User] -->|Complete Task| UC4
-    A[Admin] -->|Configure System| UC5((System Settings))
+@startuml
+' Задаємо напрямок розташування елементів зліва направо (не обов’язково, але може бути зручним)
+left to right direction
+
+' Оголошуємо акторів
+actor Admin as A
+actor Manager as B
+actor User as C
+
+' Оголошуємо прецеденти (випадки використання)
+usecase UC1 as "User Management"
+usecase UC2 as "Create & Assign Task"
+usecase UC3 as "Reporting"
+usecase UC4 as "Task Tracking"
+usecase UC5 as "System Settings"
+
+' Пов’язуємо акторів із прецедентами
+A --> UC1 : Manage Users
+A --> UC5 : Configure System
+
+B --> UC2 : Create & Assign Task
+B --> UC3 : Generate Reports
+
+C --> UC4 : Update Task Status
+C --> UC4 : View Tasks
+C --> UC4 : Complete Task
+
+@enduml
 
