@@ -1,1 +1,11 @@
+mermaid
+КопіюватиРедагувати
+flowchart LR
+    A[Admin] -->|Manage Users| UC1((User Management))
+    B[Manager] -->|Create & Assign Task| UC2((Create/Assign Task))
+    B[Manager] -->|Generate Reports| UC3((Reporting))
+    C[User] -->|Update Task Status| UC4((Task Tracking))
+    C[User] -->|View Tasks| UC4
+    C[User] -->|Complete Task| UC4
+    A[Admin] -->|Configure System| UC5((System Settings))
 
